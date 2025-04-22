@@ -8,23 +8,22 @@
     :root {
       --primary: #3a1c0d;
       --accent: #9d3826;
-      --bg: #fefefe;
-      --text: #333;
-      --light: #faf4f0;
+      --bg-gradient: linear-gradient(135deg, #3a1c0d 0%, #5a2a00 100%);
+      --text: #f5f0ea;
+      --light: rgba(255,255,255,0.1);
       --font-sans: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: var(--font-sans);
-      background: var(--bg);
+      background: var(--bg-gradient);
       color: var(--text);
       line-height: 1.6;
+      min-height: 100vh;
     }
     .hero {
-      background: linear-gradient(rgba(58,28,13,0.8), rgba(58,28,13,0.8)), url('https://images.unsplash.com/photo-1615484477690-6a7e97a2b4f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      color: #fff;
-      text-align: center;
       padding: 100px 20px;
+      text-align: center;
     }
     .hero h1 {
       font-size: 3em;
@@ -83,6 +82,7 @@
       font-style: italic;
       position: relative;
       max-width: 800px;
+      color: #fff;
     }
     .testimonial::before {
       content: '“';
@@ -111,16 +111,18 @@
       transform: scale(1.05);
     }
     footer {
-      background: #f4f4f4;
+      background: rgba(0,0,0,0.1);
       padding: 30px 20px;
       text-align: center;
       font-size: 0.9em;
-      color: #777;
+      color: #ddd;
     }
     .graphic {
       display: block;
       margin: 40px auto;
       max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
     }
   </style>
 </head>
@@ -129,8 +131,6 @@
     <h1>The Gift That Speaks from the Heart</h1>
     <p>When words fall short, let a masterpiece of chocolate do the talking. Transform emotions into unforgettable experiences.</p>
   </section>
-
-  <img src="https://images.unsplash.com/photo-1608219988420-5f84571d8cdb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Melting Chocolate Drizzle" class="graphic">
 
   <div class="container">
     <h2>Artisanal Masterpieces</h2>
