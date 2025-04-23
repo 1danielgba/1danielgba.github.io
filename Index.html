@@ -8,65 +8,87 @@
     :root {
       --primary: #3a1c0d;
       --accent: #9d3826;
-      --bg-gradient: linear-gradient(135deg, #3a1c0d 0%, #5a2a00 100%);
-      --text: #f5f0ea;
-      --light: rgba(255,255,255,0.1);
+      --bg-white: #ffffff;
+      --text-dark: #333333;
+      --light-overlay: rgba(255,255,255,0.8);
       --font-sans: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: var(--font-sans);
-      background: var(--bg-gradient);
-      color: var(--text);
+      background: var(--bg-white) url('https://images.unsplash.com/photo-1592512918735-e33c7e9dbd18?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=60') center/cover no-repeat;
+      color: var(--text-dark);
       line-height: 1.6;
       min-height: 100vh;
     }
+    /* Cantos com grão de cacau */
+    body::before, body::after {
+      content: '';
+      position: fixed;
+      width: 200px;
+      height: 200px;
+      background: url('https://images.unsplash.com/photo-1599985631007-9e3f1f975b15?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=60') center/cover no-repeat;
+      opacity: 0.2;
+      z-index: -1;
+    }
+    body::before { top: 0; left: 0; transform: rotate(-15deg); }
+    body::after  { bottom: 0; right: 0; transform: rotate(20deg); }
     .hero {
-      padding: 100px 20px;
+      position: relative;
+      background: var(--light-overlay);
       text-align: center;
+      padding: 120px 20px;
+      overflow: hidden;
     }
-    .hero h1 {
-      font-size: 3em;
-      margin-bottom: 20px;
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 50%;
+      width: 150%; height: 200px;
+      background: url('https://images.unsplash.com/photo-1606857521015-7c61c9ddc9bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      transform: translateX(-50%);
+      opacity: 0.4;
+      z-index: 0;
     }
-    .hero p {
-      font-size: 1.3em;
-      max-width: 800px;
-      margin: auto;
-      opacity: 0.9;
+    .hero h1, .hero p {
+      position: relative; z-index: 1;
+      color: var(--primary);
     }
+    .hero h1 { font-size: 3em; margin-bottom: 20px; }
+    .hero p  { font-size: 1.2em; max-width: 800px; margin: 0 auto; }
     .container {
       max-width: 900px;
-      margin: auto;
-      padding: 60px 20px;
+      margin: 60px auto;
+      background: var(--bg-white);
+      padding: 40px 30px;
+      border-radius: 8px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      position: relative;
     }
     h2 {
       font-size: 2em;
-      color: var(--accent);
-      margin-bottom: 15px;
+      color: var(--primary);
+      margin-bottom: 20px;
       text-align: center;
     }
     .features, .custom, .delivery {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
       gap: 30px;
-      align-items: start;
       margin-bottom: 60px;
     }
     .features div, .custom div, .delivery div {
-      background: var(--light);
       padding: 20px;
       border-left: 6px solid var(--accent);
       border-radius: 5px;
+      background: var(--light-overlay);
     }
-    .features div:nth-child(odd) {
-      border-left-color: var(--primary);
-    }
+    .features div:nth-child(odd) { border-left-color: var(--primary); }
     ul { list-style: none; }
     ul li {
       position: relative;
-      padding-left: 25px;
-      margin-bottom: 12px;
+      padding-left: 24px;
+      margin-bottom: 10px;
     }
     ul li::before {
       content: '✔';
@@ -75,14 +97,13 @@
       color: var(--accent);
     }
     .testimonial {
-      background: var(--light);
-      border-left: 6px solid var(--primary);
-      margin: 40px auto;
       padding: 30px;
       font-style: italic;
-      position: relative;
+      margin: 40px auto;
+      border-left: 6px solid var(--primary);
+      background: var(--light-overlay);
       max-width: 800px;
-      color: #fff;
+      color: var(--text-dark);
     }
     .testimonial::before {
       content: '“';
@@ -93,102 +114,55 @@
       color: var(--accent);
       opacity: 0.3;
     }
-    .cta {
-      text-align: center;
-      margin: 80px 0;
-    }
+    .cta { text-align: center; margin: 40px 0; }
     .cta a {
       background-color: var(--accent);
-      color: #fff;
+      color: var(--bg-white);
       text-decoration: none;
-      padding: 18px 40px;
+      padding: 16px 36px;
       border-radius: 30px;
       font-size: 1.2em;
       transition: background 0.3s, transform 0.2s;
     }
-    .cta a:hover {
-      background-color: #7a2c1e;
-      transform: scale(1.05);
-    }
+    .cta a:hover { background-color: #7a2c1e; transform: scale(1.05); }
     footer {
-      background: rgba(0,0,0,0.1);
-      padding: 30px 20px;
       text-align: center;
+      padding: 20px;
       font-size: 0.9em;
-      color: #ddd;
-    }
-    .graphic {
-      display: block;
-      margin: 40px auto;
-      max-width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      color: var(--text-dark);
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
   <section class="hero">
     <h1>The Gift That Speaks from the Heart</h1>
-    <p>When words fall short, let a masterpiece of chocolate do the talking. Transform emotions into unforgettable experiences.</p>
+    <p>When words fall short, let a masterpiece of chocolate do the talking.</p>
   </section>
-
   <div class="container">
     <h2>Artisanal Masterpieces</h2>
     <div class="features">
-      <div>
-        <h3>World-Champion Craft</h3>
-        <p>Meticulously handcrafted by a world-class chocolatier, each piece is a testament to perfection.</p>
-      </div>
-      <div>
-        <h3>Perfect Harmony</h3>
-        <p>Inspired by the golden ratio, every bite delivers balanced flavor and artistry.</p>
-      </div>
-      <div>
-        <h3>Pure Ingredients</h3>
-        <p>100% natural, gluten-free, palm-oil-free, and GMO-free for guiltless indulgence.</p>
-      </div>
-      <div>
-        <h3>Elevated Packaging</h3>
-        <p>Luxurious design enhances the unboxing experience, making every gift memorable.</p>
-      </div>
+      <div><h3>World-Champion Craft</h3><p>Handcrafted by a world-class chocolatier, each piece is perfection.</p></div>
+      <div><h3>Perfect Harmony</h3><p>Inspired by the golden ratio for balanced flavor and artistry.</p></div>
+      <div><h3>Pure Ingredients</h3><p>100% natural, gluten-free, palm-oil-free, and GMO-free.</p></div>
+      <div><h3>Elevated Packaging</h3><p>Luxurious design enhances the unboxing experience.</p></div>
     </div>
-
-    <div class="testimonial">“These chocolates brought me and my mother back together after years of distance.” – Jessica, NY</div>
-    <div class="testimonial">“I won her heart again with this gift. It truly changed our story.” – Marcus, LA</div>
-
+    <div class="testimonial">“These chocolates brought me and my mother back together.” – Jessica, NY</div>
+    <div class="testimonial">“I won her heart again with this gift—it changed our story.” – Marcus, LA</div>
     <h2>Personalized Luxury</h2>
     <div class="custom">
-      <div>
-        <ul>
-          <li>Engraved wooden keepsake box</li>
-          <li>Custom photo or artwork options</li>
-        </ul>
-      </div>
-      <div>
-        <ul>
-          <li>Laser-etched heartfelt messages</li>
-          <li>Premium ribbons and gift wrapping</li>
-        </ul>
-      </div>
+      <div><ul><li>Engraved wooden keepsake box</li><li>Custom photo or artwork options</li></ul></div>
+      <div><ul><li>Laser-etched heartfelt messages</li><li>Premium ribbons and gift wrapping</li></ul></div>
     </div>
-
     <h2>Worldwide Fulfillment</h2>
     <div class="delivery">
-      <div>
-        <p>Reliable shipping to over 244 countries.</p>
-      </div>
-      <div>
-        <p>Dedicated customer support from order to delivery.</p>
-      </div>
+      <div><p>Shipping to over 244 countries.</p></div>
+      <div><p>Dedicated customer support from order to delivery.</p></div>
     </div>
-
-    <div class="cta">
-      <a href="https://www.dpbolvw.net/bp115shqnhp46568DA8E746AC899AA" target="_blank">Send This Gift of Emotion</a>
-    </div>
+    <div class="cta"><a href="https://www.dpbolvw.net/bp115shqnhp46568DA8E746AC899AA" target="_blank">Send This Gift of Emotion</a></div>
   </div>
-
   <footer>
-    <p>Disclosure: This page contains affiliate links. We may earn a commission on qualifying purchases at no extra cost to you.</p>
+    <p>Disclosure: This page contains affiliate links. We may earn a commission at no extra cost to you.</p>
   </footer>
 </body>
 </html>
