@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chocolate That Heals</title>
+  <title>Say What Words Can’t</title>
   <style>
     :root {
       --primary: #3a1c0d;
-      --accent: #9d3826;
-      --light: #fff9f6;
-      --text: #333;
+      --accent: #a33d2f;
+      --light: #fdf8f6;
+      --text: #2d2d2d;
       --font-sans: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -20,42 +20,41 @@
       line-height: 1.6;
     }
     .hero {
-      background: url('https://images.unsplash.com/photo-1615484477690-6a7e97a2b4f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1615484477690-6a7e97a2b4f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
       color: #fff;
       text-align: center;
       padding: 120px 20px;
     }
     .hero h1 {
-      font-size: 3.2em;
+      font-size: 3.5em;
       margin-bottom: 20px;
     }
     .hero p {
-      font-size: 1.5em;
-      max-width: 750px;
+      font-size: 1.4em;
+      max-width: 700px;
       margin: auto;
-      opacity: 0.95;
     }
     .container {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
       padding: 60px 20px;
     }
     .section-title {
       text-align: center;
       color: var(--primary);
-      font-size: 2.2em;
-      margin-bottom: 40px;
+      font-size: 2.5em;
+      margin-bottom: 50px;
     }
     .feature-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 40px;
     }
     .feature {
       background: #fff;
-      border-radius: 12px;
-      padding: 25px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 6px 30px rgba(0,0,0,0.1);
     }
     .feature h3 {
       color: var(--accent);
@@ -63,17 +62,19 @@
     }
     .image-banner {
       width: 100%;
-      border-radius: 12px;
+      border-radius: 16px;
       margin: 60px 0;
-      box-shadow: 0 6px 30px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
     }
     .testimonial {
       background: #fff;
-      padding: 30px;
-      margin: 40px auto;
-      border-left: 6px solid var(--accent);
+      padding: 40px;
+      margin: 50px auto;
+      border-left: 8px solid var(--accent);
       font-style: italic;
+      font-size: 1.1em;
       max-width: 800px;
+      border-radius: 10px;
     }
     .cta {
       text-align: center;
@@ -82,27 +83,28 @@
     .cta a {
       background: var(--accent);
       color: white;
-      padding: 18px 40px;
-      font-size: 1.3em;
+      padding: 18px 48px;
+      font-size: 1.4em;
       text-decoration: none;
-      border-radius: 40px;
+      border-radius: 50px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       transition: background 0.3s ease;
     }
     .cta a:hover {
-      background: #7a2c1e;
+      background: #822b21;
     }
     footer {
       text-align: center;
-      font-size: 0.9em;
-      color: #888;
-      padding: 30px 20px;
+      font-size: 0.85em;
+      color: #777;
+      padding: 40px 20px;
     }
   </style>
 </head>
 <body>
   <section class="hero">
     <h1>Say What Words Can’t</h1>
-    <p>A gift of artisanal chocolate that heals, reconnects, and speaks straight to the heart.</p>
+    <p>Elegant, emotional, and unforgettable — a chocolate gift that restores connections and expresses what hearts feel.</p>
   </section>
 
   <div class="container">
@@ -110,23 +112,23 @@
     <div class="feature-grid">
       <div class="feature">
         <h3>Crafted with Intention</h3>
-        <p>Each piece is handmade by master chocolatiers, designed not just for taste but for emotional impact.</p>
+        <p>Each piece is handcrafted by master chocolatiers, not just for flavor — but to touch the soul.</p>
       </div>
       <div class="feature">
         <h3>Luxury with Purpose</h3>
-        <p>From golden ratio design to hand-selected ingredients, this isn’t candy — it’s a message.</p>
+        <p>Designed with aesthetic precision, curated ingredients, and heartfelt detail. It’s more than chocolate. It’s a message.</p>
       </div>
       <div class="feature">
         <h3>Emotionally Personalized</h3>
-        <p>Add your message, photo, or even a memory — engraved directly into a keepsake box.</p>
+        <p>Include a heartfelt note, photo, or message — engraved into the keepsake box for a truly personal touch.</p>
       </div>
       <div class="feature">
         <h3>Delivered Anywhere</h3>
-        <p>Worldwide express shipping, elegant gift wrap, and real-time tracking ensure a perfect arrival.</p>
+        <p>Global express delivery, luxury packaging, and real-time tracking for a flawless gifting experience.</p>
       </div>
     </div>
 
-    <img src="https://images.unsplash.com/photo-1606857521015-7c61c9ddc9bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Melting chocolate being poured" class="image-banner">
+    <img src="https://images.unsplash.com/photo-1606857521015-7c61c9ddc9bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Refined chocolate pouring into mold" class="image-banner">
 
     <div class="testimonial">“After years apart, I sent this to my father. He cried when he opened it. That was our first real moment in a decade.” – Ava, Boston</div>
     <div class="testimonial">“It wasn’t just chocolate. It was an apology, a hug, and a new beginning.” – Elias, Miami</div>
@@ -137,7 +139,7 @@
   </div>
 
   <footer>
-    <p>Disclosure: This page contains affiliate links. We may earn a commission on qualifying purchases at no extra cost to you.</p>
+    <p>This page may contain affiliate links. As an affiliate, we may earn commission from qualifying purchases — with no extra cost to you.</p>
   </footer>
 </body>
 </html>
