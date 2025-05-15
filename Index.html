@@ -3,208 +3,184 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gourmet Chocolate Landing Page</title>
+  <title>zChocolat Gourmet - Affiliate Landing Page</title>
   <style>
-    /* Reset & Global */
+    /* Reset and Global Styles */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #3e2723; color: #fff; line-height: 1.6; }
+    body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #36221e; color: #f3e5f5; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
     img { max-width: 100%; display: block; }
-    a { color: inherit; text-decoration: none; }
-    ul { list-style: none; }
 
     /* Container */
-    .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+    .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 20px; }
 
-    /* Header / Nav */
-    header { background: #5d4037; padding: 20px 0; position: sticky; top: 0; z-index: 10; }
-    .nav { display: flex; justify-content: space-between; align-items: center; }
-    .nav .logo { font-size: 1.5rem; font-weight: bold; }
-    .nav ul { display: flex; gap: 20px; }
-    .nav ul li { font-size: 1rem; }
-    .nav ul li:hover { text-decoration: underline; cursor: pointer; }
+    /* Header */
+    header { background-color: #45241e; padding: 15px 0; position: sticky; top: 0; z-index: 100; }
+    .logo { font-size: 1.5rem; font-weight: bold; color: #fce4ec; text-align: center; }
+    nav ul { display: flex; justify-content: center; gap: 30px; margin-top: 10px; }
+    nav ul li { list-style: none; font-size: 1rem; cursor: pointer; }
+    nav ul li:hover { text-decoration: underline; }
 
-    /* Hero */
-    .hero { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 100px 20px; background: url('images/hero-chocolate.jpg') center/cover no-repeat; }
-    .hero h1 { font-size: 3rem; color: #ffebcd; margin-bottom: 20px; }
-    .hero p { font-size: 1.2rem; color: #ffe4b5; margin-bottom: 30px; max-width: 700px; }
-    .btn-primary { background-color: #6d4c41; color: #fff; padding: 15px 30px; border: none; border-radius: 30px; font-size: 1rem; cursor: pointer; transition: background 0.3s; }
-    .btn-primary:hover { background-color: #5d4037; }
+    /* Hero Section */
+    .hero { text-align: center; padding: 100px 20px; background: url('images/hero-zchocolat.jpg') center/cover no-repeat; }
+    .hero h1 { font-size: 3rem; color: #ffeb3b; margin-bottom: 20px; }
+    .hero p { font-size: 1.2rem; color: #fffde7; margin-bottom: 30px; max-width: 700px; margin: 0 auto; }
+    .btn-primary { display: inline-block; background-color: #ad1457; color: #fff; padding: 15px 40px; border-radius: 30px; font-size: 1.1rem; transition: background 0.3s; }
+    .btn-primary:hover { background-color: #880a4e; }
 
-    /* Features */
-    .features { padding: 80px 0; background-color: #4e342e; }
-    .features .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-    .feature-card { background-color: #5d4037; border-radius: 12px; overflow: hidden; text-align: center; padding-bottom: 20px; }
-    .feature-card img { height: 180px; object-fit: cover; }
-    .feature-card h3 { margin: 15px 0; color: #ffebcd; }
-    .feature-card p { padding: 0 15px; color: #ffe4b5; }
+    /* About Section */
+    .about { padding: 80px 0; background-color: #4e342e; }
+    .about h2 { color: #ffe0b2; font-size: 2.2rem; text-align: center; margin-bottom: 20px; }
+    .about p { max-width: 800px; margin: 0 auto; color: #fff8e1; font-size: 1rem; }
 
-    /* Products */
-    .products { padding: 80px 0; }
-    .products h2 { text-align: center; margin-bottom: 40px; font-size: 2.2rem; }
-    .product-list { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
-    .product-card { background: #6d4c41; border-radius: 12px; overflow: hidden; width: 300px; display: flex; flex-direction: column; }
-    .product-card img { height: 200px; object-fit: cover; }
-    .product-card .info { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
-    .product-card h4 { margin-bottom: 10px; color: #ffebcd; }
-    .product-card p { margin-bottom: 15px; color: #ffe4b5; font-size: 0.95rem; }
-    .product-card .btn-secondary { background: #5d4037; color: #fff; padding: 10px; border-radius: 25px; font-size: 0.95rem; text-align: center; }
-    .product-card .btn-secondary:hover { background: #4e342e; }
+    /* Highlights Section */
+    .highlights { padding: 80px 0; }
+    .highlights h2 { text-align: center; color: #ffe0b2; font-size: 2.2rem; margin-bottom: 40px; }
+    .highlights .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+    .highlight-card { background-color: #5e342e; border-radius: 10px; padding: 20px; text-align: center; }
+    .highlight-card img { border-radius: 8px; height: 180px; object-fit: cover; margin-bottom: 15px; }
+    .highlight-card h3 { font-size: 1.5rem; color: #ffebcd; margin-bottom: 10px; }
+    .highlight-card p { font-size: 1rem; color: #fff8e1; }
 
-    /* Testimonials */
-    .testimonials { background: #4e342e; padding: 80px 0; }
-    .testimonials h2 { text-align: center; margin-bottom: 40px; }
-    .testimonial-item { max-width: 700px; margin: 0 auto 30px; text-align: center; }
-    .testimonial-item p { font-style: italic; margin-bottom: 10px; }
-    .testimonial-item span { font-weight: bold; color: #ffebcd; }
+    /* Gallery Section */
+    .gallery { padding: 80px 0; background-color: #4e342e; }
+    .gallery h2 { text-align: center; color: #ffccbc; font-size: 2rem; margin-bottom: 40px; }
+    .gallery .images { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+    .gallery .images img { width: 300px; height: 200px; object-fit: cover; border-radius: 10px; }
 
-    /* FAQ */
-    .faq { padding: 80px 0; }
-    .faq h2 { text-align: center; margin-bottom: 40px; }
-    .faq-item { margin-bottom: 20px; max-width: 700px; margin-left: auto; margin-right: auto; }
-    .faq-item summary { font-weight: bold; cursor: pointer; background: #5d4037; padding: 15px; border-radius: 8px; }
-    .faq-item p { padding: 15px; background: #6d4c41; border-radius: 8px; margin-top: 5px; }
+    /* Testimonials Section */
+    .testimonials { padding: 80px 0; }
+    .testimonials h2 { text-align: center; color: #ffccbc; font-size: 2rem; margin-bottom: 40px; }
+    .testimonial-item { max-width: 700px; margin: 0 auto 30px; background-color: #45302e; border-radius: 10px; padding: 20px; }
+    .testimonial-item p { font-style: italic; color: #fafafa; margin-bottom: 15px; }
+    .testimonial-item span { display: block; text-align: right; font-weight: bold; color: #ffe0b2; }
 
-    /* Newsletter */
-    .newsletter { background: #5d4037; padding: 60px 20px; text-align: center; }
-    .newsletter h2 { color: #ffebcd; margin-bottom: 20px; }
-    .newsletter form { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
-    .newsletter input[type="email"] { padding: 12px; border: none; border-radius: 25px; width: 300px; }
-    .newsletter button { padding: 12px 25px; border: none; border-radius: 25px; background: #4e342e; color: #fff; cursor: pointer; }
+    /* FAQ Section */
+    .faq { padding: 80px 0; background-color: #4e342e; }
+    .faq h2 { text-align: center; color: #ffe0b2; font-size: 2rem; margin-bottom: 40px; }
+    .faq details { max-width: 800px; margin: 0 auto 20px; background: #5e342e; border-radius: 8px; }
+    .faq summary { padding: 15px; font-weight: bold; cursor: pointer; }
+    .faq p { padding: 15px; background: #6d4c41; margin: 0; border-radius: 0 0 8px 8px; }
+
+    /* CTA Repeat Section */
+    .cta-repeat { text-align: center; padding: 60px 20px; }
+    .cta-repeat .btn-primary { font-size: 1.2rem; padding: 20px 50px; }
 
     /* Footer */
-    footer { background: #3e2723; text-align: center; padding: 20px; font-size: 0.9rem; color: #ccc; }
+    footer { background-color: #45241e; text-align: center; padding: 20px; font-size: 0.9rem; color: #ccc; }
 
     /* Responsive */
     @media (max-width: 768px) {
-      .features .grid, .product-list { grid-template-columns: 1fr; }
-      .nav ul { flex-direction: column; gap: 10px; }
+      .hero h1 { font-size: 2.5rem; }
+      .highlights .grid, .gallery .images { grid-template-columns: 1fr; display: block; }
     }
   </style>
 </head>
 <body>
-
-  <!-- Header / Nav -->
+  <!-- Header -->
   <header>
-    <div class="container nav">
-      <div class="logo">Gourmet Choco</div>
-      <ul>
-        <li>Home</li><li>About</li><li>Products</li><li>FAQ</li><li>Contact</li>
-      </ul>
+    <div class="container">
+      <div class="logo">zChocolat Affiliate</div>
+      <nav>
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Highlights</li>
+          <li>Gallery</li>
+          <li>FAQ</li>
+          <li>Contact</li>
+        </ul>
+      </nav>
     </div>
   </header>
 
   <!-- Hero -->
   <section class="hero">
-    <h1>Elevate Your Passion for Gourmet Chocolate</h1>
-    <p>Discover intense flavors and textures crafted by the world's finest chocolatiers. Indulge in luxury, one bite at a time.</p>
-    <button class="btn-primary" onclick="window.location.href='https://www.kqzyfj.com/pq80xdmjdl02124964A3026845566'">Shop Now</button>
+    <h1>Indulge in French Chocolate Luxury</h1>
+    <p>Earn 20% commission on confirmed sales with zChocolat. Experience gourmet elegance delivered to your door.</p>
+    <a href="YOUR_AFFILIATE_LINK" class="btn-primary">Shop Now</a>
   </section>
 
-  <!-- Features -->
-  <section class="features container">
-    <h2>Our Signature Highlights</h2>
+  <!-- About -->
+  <section class="about container">
+    <h2>About zChocolat</h2>
+    <p>zChocolat is renowned for bringing the art of French chocolatiering to your doorstep. Founded in 2003, we partner with master chocolatiers across France to create exclusive collections using the finest ingredients. Our mission is to share the passion and tradition of gourmet chocolate with connoisseurs worldwide.</p>
+  </section>
+
+  <!-- Highlights -->
+  <section class="highlights container">
+    <h2>Why zChocolat?</h2>
     <div class="grid">
-      <div class="feature-card">
-        <img src="images/origin-cocoa.jpg" alt="Premium Origin">
-        <h3>Premium Origin</h3>
-        <p>Cocoa sourced from the world's most exclusive plantations.</p>
+      <div class="highlight-card">
+        <img src="images/highlight-origin.jpg" alt="Premium Cocoa Origin">
+        <h3>Premium Cocoa Origin</h3>
+        <p>Hand-selected cocoa from the finest French estates for unmatched flavor.</p>
       </div>
-      <div class="feature-card">
-        <img src="images/artisanal.jpg" alt="Artisanal Craft">
-        <h3>Artisanal Craft</h3>
-        <p>Handcrafted batches ensuring unparalleled quality and taste.</p>
+      <div class="highlight-card">
+        <img src="images/highlight-artisan.jpg" alt="Artisanal Craftsmanship">
+        <h3>Artisanal Craftsmanship</h3>
+        <p>Expert chocolatiers create each piece with precision and passion.</p>
       </div>
-      <div class="feature-card">
-        <img src="images/exclusive-varieties.jpg" alt="Unique Varieties">
-        <h3>Unique Varieties</h3>
-        <p>Innovative flavors and infusions to delight every palate.</p>
+      <div class="highlight-card">
+        <img src="images/highlight-collection.jpg" alt="Exclusive Collection">
+        <h3>Exclusive Collection</h3>
+        <p>A curated selection of bestsellers and limited-edition flavors.</p>
       </div>
     </div>
   </section>
 
-  <!-- Products -->
-  <section class="products container">
-    <h2>Featured Products</h2>
-    <div class="product-list">
-      <div class="product-card">
-        <img src="images/product1.jpg" alt="Dark Chocolate 85%">
-        <div class="info">
-          <h4>Dark Chocolate 85%</h4>
-          <p>Rich and intense, with notes of blackberry and espresso.</p>
-          <a href="YOUR_AFFILIATE_LINK_HERE" class="btn-secondary">Buy Now</a>
-        </div>
-      </div>
-      <div class="product-card">
-        <img src="images/product2.jpg" alt="Milk Chocolate Sea Salt">
-        <div class="info">
-          <h4>Milk Chocolate Sea Salt</h4>
-          <p>Smooth milk chocolate paired with a hint of sea salt.</p>
-          <a href="YOUR_AFFILIATE_LINK_HERE" class="btn-secondary">Buy Now</a>
-        </div>
-      </div>
-      <div class="product-card">
-        <img src="images/product3.jpg" alt="White Chocolate Raspberry">
-        <div class="info">
-          <h4>White Chocolate Raspberry</h4>
-          <p>Sweet white chocolate studded with tart raspberry bits.</p>
-          <a href="YOUR_AFFILIATE_LINK_HERE" class="btn-secondary">Buy Now</a>
-        </div>
-      </div>
+  <!-- Gallery -->
+  <section class="gallery container">
+    <h2>Gallery</h2>
+    <div class="images">
+      <img src="images/gallery1.jpg" alt="Chocolate Assortment">
+      <img src="images/gallery2.jpg" alt="Gift Box">
+      <img src="images/gallery3.jpg" alt="Bar Close-up">
     </div>
   </section>
 
   <!-- Testimonials -->
-  <section class="testimonials">
-    <div class="container">
-      <h2>What Connoisseurs Say</h2>
-      <div class="testimonial-item">
-        <p>“This is the most exquisite chocolate I've ever tasted. Truly divine.”</p>
-        <span>— Marie Claire</span>
-      </div>
-      <div class="testimonial-item">
-        <p>“A perfect balance of flavor and texture. Absolute perfection.”</p>
-        <span>— Chocolat Lovers Magazine</span>
-      </div>
-      <div class="testimonial-item">
-        <p>“Unmatched quality and richness. A must-try for any chocolate aficionado.”</p>
-        <span>— Foodie Daily</span>
-      </div>
+  <section class="testimonials container">
+    <h2>What the Experts Say</h2>
+    <div class="testimonial-item">
+      <p>“zChocolat delivers an exquisite chocolate experience unlike any other.”</p>
+      <span>— Jean-Paul Hévin</span>
+    </div>
+    <div class="testimonial-item">
+      <p>“Luxurious texture and deep flavors—pure indulgence.”</p>
+      <span>— Jacques Torres</span>
+    </div>
+    <div class="testimonial-item">
+      <p>“A masterpiece in every bite.”</p>
+      <span>— Anne-Sophie Pic</span>
     </div>
   </section>
 
   <!-- FAQ -->
   <section class="faq container">
-    <h2>Frequently Asked Questions</h2>
-    <details class="faq-item">
-      <summary>What makes your chocolate gourmet?</summary>
-      <p>Our chocolate is crafted from rare cocoa beans, processed in small batches, and refined by master chocolatiers.</p>
+    <h2>FAQ</h2>
+    <details>
+      <summary>How do I redeem my discount?</summary>
+      <p>Simply click 'Shop Now' and your affiliate code will be applied at checkout.</p>
     </details>
-    <details class="faq-item">
-      <summary>Do you offer international shipping?</summary>
-      <p>Yes, we ship worldwide. Shipping rates and times vary by destination.</p>
+    <details>
+      <summary>What is the shipping cost?</summary>
+      <p>Shipping rates depend on your location. Standard shipping starts at $5.95.</p>
     </details>
-    <details class="faq-item">
-      <summary>Can I track my order?</summary>
-      <p>Absolutely. Once your order ships, we provide a tracking number via email.</p>
+    <details>
+      <summary>Do you offer gift wrapping?</summary>
+      <p>Yes, gift wrapping is available at checkout for an additional fee.</p>
     </details>
   </section>
 
-  <!-- Newsletter -->
-  <section class="newsletter">
-    <div class="container">
-      <h2>Join Our Chocolate Club</h2>
-      <p>Subscribe for exclusive offers, new releases, and behind-the-scenes access.</p>
-      <form action="#" method="POST">
-        <input type="email" name="email" placeholder="Your email address" required>
-        <button type="submit">Subscribe</button>
-      </form>
-    </div>
+  <!-- Repeat CTA -->
+  <section class="cta-repeat">
+    <a href="https://www.kqzyfj.com/pq80xdmjdl02124964A3026845566" class="btn-primary">Claim Your 20% Commission Now</a>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>This is an affiliate page. By clicking the links and making purchases, you support our work at no additional cost.</p>
+    <p>This is an affiliate page. Clicking links and making purchases supports our work at no extra cost.</p>
   </footer>
-
 </body>
 </html>
