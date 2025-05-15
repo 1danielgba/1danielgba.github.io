@@ -3,185 +3,206 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gourmet Chocolate - Discover the Taste of Elegance</title>
-  <!--
-    NOTE: Replace the image paths below (e.g., 'images/hero-chocolate.jpg')
-    with your actual image URLs or local file paths before deploying.
-  -->
+  <title>Gourmet Chocolate Landing Page</title>
   <style>
-    /* Basic reset */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f5f1ee;
-      color: #3b2f2f;
-      line-height: 1.6;
-    }
-    a { text-decoration: none; color: inherit; }
+    /* Reset & Global */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #3e2723; color: #fff; line-height: 1.6; }
     img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
 
-    /* Main container */
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px 0;
-    }
+    /* Container */
+    .container { width: 90%; max-width: 1200px; margin: 0 auto; }
 
-    /* Hero section */
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 60px 20px;
-      /* Replace with your hero background image */
-      background: url('images/hero-chocolate.jpg') center/cover no-repeat;
-      color: #f5f1ee;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-      margin-bottom: 20px;
-    }
-    .hero p {
-      font-size: 1.25rem;
-      max-width: 700px;
-    }
-    .btn-primary {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 15px 30px;
-      font-size: 1.1rem;
-      background-color: #5a2e21;
-      color: #f5f1ee;
-      border-radius: 50px;
-      transition: background 0.3s;
-    }
-    .btn-primary:hover {
-      background-color: #7c4535;
-    }
+    /* Header / Nav */
+    header { background: #5d4037; padding: 20px 0; position: sticky; top: 0; z-index: 10; }
+    .nav { display: flex; justify-content: space-between; align-items: center; }
+    .nav .logo { font-size: 1.5rem; font-weight: bold; }
+    .nav ul { display: flex; gap: 20px; }
+    .nav ul li { font-size: 1rem; }
+    .nav ul li:hover { text-decoration: underline; cursor: pointer; }
 
-    /* Features section */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      margin: 60px 0;
-    }
-    .feature-card {
-      background-color: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      overflow: hidden;
-      text-align: center;
-    }
-    .feature-card img {
-      height: 200px;
-      object-fit: cover;
-    }
-    .feature-card h3 {
-      margin: 15px 0;
-      font-size: 1.5rem;
-      color: #5a2e21;
-    }
-    .feature-card p {
-      padding: 0 15px 20px;
-      color: #3b2f2f;
-    }
+    /* Hero */
+    .hero { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 100px 20px; background: url('images/hero-chocolate.jpg') center/cover no-repeat; }
+    .hero h1 { font-size: 3rem; color: #ffebcd; margin-bottom: 20px; }
+    .hero p { font-size: 1.2rem; color: #ffe4b5; margin-bottom: 30px; max-width: 700px; }
+    .btn-primary { background-color: #6d4c41; color: #fff; padding: 15px 30px; border: none; border-radius: 30px; font-size: 1rem; cursor: pointer; transition: background 0.3s; }
+    .btn-primary:hover { background-color: #5d4037; }
 
-    /* Quotes section */
-    .quotes {
-      background-color: #e4d9d1;
-      padding: 60px 20px;
-      border-radius: 12px;
-      margin-bottom: 60px;
-    }
-    .quote {
-      font-style: italic;
-      margin-bottom: 20px;
-      position: relative;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .quote::before {
-      content: "“";
-      font-size: 4rem;
-      position: absolute;
-      top: -10px;
-      left: -10px;
-      color: #5a2e21;
-    }
-    .quote-footer {
-      text-align: right;
-      margin-top: 5px;
-      font-weight: bold;
-      color: #5a2e21;
-    }
+    /* Features */
+    .features { padding: 80px 0; background-color: #4e342e; }
+    .features .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+    .feature-card { background-color: #5d4037; border-radius: 12px; overflow: hidden; text-align: center; padding-bottom: 20px; }
+    .feature-card img { height: 180px; object-fit: cover; }
+    .feature-card h3 { margin: 15px 0; color: #ffebcd; }
+    .feature-card p { padding: 0 15px; color: #ffe4b5; }
 
-    /* Footer / Affiliate note */
-    .footer {
-      text-align: center;
-      padding: 20px 0;
-      font-size: 0.9rem;
-      color: #7a6e6b;
+    /* Products */
+    .products { padding: 80px 0; }
+    .products h2 { text-align: center; margin-bottom: 40px; font-size: 2.2rem; }
+    .product-list { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
+    .product-card { background: #6d4c41; border-radius: 12px; overflow: hidden; width: 300px; display: flex; flex-direction: column; }
+    .product-card img { height: 200px; object-fit: cover; }
+    .product-card .info { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .product-card h4 { margin-bottom: 10px; color: #ffebcd; }
+    .product-card p { margin-bottom: 15px; color: #ffe4b5; font-size: 0.95rem; }
+    .product-card .btn-secondary { background: #5d4037; color: #fff; padding: 10px; border-radius: 25px; font-size: 0.95rem; text-align: center; }
+    .product-card .btn-secondary:hover { background: #4e342e; }
+
+    /* Testimonials */
+    .testimonials { background: #4e342e; padding: 80px 0; }
+    .testimonials h2 { text-align: center; margin-bottom: 40px; }
+    .testimonial-item { max-width: 700px; margin: 0 auto 30px; text-align: center; }
+    .testimonial-item p { font-style: italic; margin-bottom: 10px; }
+    .testimonial-item span { font-weight: bold; color: #ffebcd; }
+
+    /* FAQ */
+    .faq { padding: 80px 0; }
+    .faq h2 { text-align: center; margin-bottom: 40px; }
+    .faq-item { margin-bottom: 20px; max-width: 700px; margin-left: auto; margin-right: auto; }
+    .faq-item summary { font-weight: bold; cursor: pointer; background: #5d4037; padding: 15px; border-radius: 8px; }
+    .faq-item p { padding: 15px; background: #6d4c41; border-radius: 8px; margin-top: 5px; }
+
+    /* Newsletter */
+    .newsletter { background: #5d4037; padding: 60px 20px; text-align: center; }
+    .newsletter h2 { color: #ffebcd; margin-bottom: 20px; }
+    .newsletter form { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
+    .newsletter input[type="email"] { padding: 12px; border: none; border-radius: 25px; width: 300px; }
+    .newsletter button { padding: 12px 25px; border: none; border-radius: 25px; background: #4e342e; color: #fff; cursor: pointer; }
+
+    /* Footer */
+    footer { background: #3e2723; text-align: center; padding: 20px; font-size: 0.9rem; color: #ccc; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .features .grid, .product-list { grid-template-columns: 1fr; }
+      .nav ul { flex-direction: column; gap: 10px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Hero Section -->
+  <!-- Header / Nav -->
+  <header>
+    <div class="container nav">
+      <div class="logo">Gourmet Choco</div>
+      <ul>
+        <li>Home</li><li>About</li><li>Products</li><li>FAQ</li><li>Contact</li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero -->
   <section class="hero">
+    <h1>Elevate Your Passion for Gourmet Chocolate</h1>
+    <p>Discover intense flavors and textures crafted by the world's finest chocolatiers. Indulge in luxury, one bite at a time.</p>
+    <button class="btn-primary" onclick="window.location.href='https://www.kqzyfj.com/pq80xdmjdl02124964A3026845566'">Shop Now</button>
+  </section>
+
+  <!-- Features -->
+  <section class="features container">
+    <h2>Our Signature Highlights</h2>
+    <div class="grid">
+      <div class="feature-card">
+        <img src="images/origin-cocoa.jpg" alt="Premium Origin">
+        <h3>Premium Origin</h3>
+        <p>Cocoa sourced from the world's most exclusive plantations.</p>
+      </div>
+      <div class="feature-card">
+        <img src="images/artisanal.jpg" alt="Artisanal Craft">
+        <h3>Artisanal Craft</h3>
+        <p>Handcrafted batches ensuring unparalleled quality and taste.</p>
+      </div>
+      <div class="feature-card">
+        <img src="images/exclusive-varieties.jpg" alt="Unique Varieties">
+        <h3>Unique Varieties</h3>
+        <p>Innovative flavors and infusions to delight every palate.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="products container">
+    <h2>Featured Products</h2>
+    <div class="product-list">
+      <div class="product-card">
+        <img src="images/product1.jpg" alt="Dark Chocolate 85%">
+        <div class="info">
+          <h4>Dark Chocolate 85%</h4>
+          <p>Rich and intense, with notes of blackberry and espresso.</p>
+          <a href="YOUR_AFFILIATE_LINK_HERE" class="btn-secondary">Buy Now</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="images/product2.jpg" alt="Milk Chocolate Sea Salt">
+        <div class="info">
+          <h4>Milk Chocolate Sea Salt</h4>
+          <p>Smooth milk chocolate paired with a hint of sea salt.</p>
+          <a href="YOUR_AFFILIATE_LINK_HERE" class="btn-secondary">Buy Now</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="images/product3.jpg" alt="White Chocolate Raspberry">
+        <div class="info">
+          <h4>White Chocolate Raspberry</h4>
+          <p>Sweet white chocolate studded with tart raspberry bits.</p>
+          <a href="YOUR_AFFILIATE_LINK_HERE" class="btn-secondary">Buy Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
     <div class="container">
-      <h1>Elevate Your Passion for Gourmet Chocolate</h1>
-      <p>Discover intense flavors and incredible textures crafted by the world's finest chocolatiers.</p>
-      <a href="https://www.kqzyfj.com/la102shqnhp46568DA8E746AC899AA" class="btn-primary">Shop Now</a>
+      <h2>What Connoisseurs Say</h2>
+      <div class="testimonial-item">
+        <p>“This is the most exquisite chocolate I've ever tasted. Truly divine.”</p>
+        <span>— Marie Claire</span>
+      </div>
+      <div class="testimonial-item">
+        <p>“A perfect balance of flavor and texture. Absolute perfection.”</p>
+        <span>— Chocolat Lovers Magazine</span>
+      </div>
+      <div class="testimonial-item">
+        <p>“Unmatched quality and richness. A must-try for any chocolate aficionado.”</p>
+        <span>— Foodie Daily</span>
+      </div>
     </div>
   </section>
 
-  <!-- Features Section -->
-  <section class="container features">
-    <div class="feature-card">
-      <!-- Replace with your feature image -->
-      <img src="images/origin-cocoa.jpg" alt="Cocoa Origin">
-      <h3>Premium Origin</h3>
-      <p>Cocoa selected from the world's most noble regions, sustainably grown.</p>
-    </div>
-    <div class="feature-card">
-      <!-- Replace with your feature image -->
-      <img src="images/artisanal.jpg" alt="Artisanal Craftsmanship">
-      <h3>Artisanal Craftsmanship</h3>
-      <p>Each bar is tempered and molded by hand to ensure unique quality.</p>
-    </div>
-    <div class="feature-card">
-      <!-- Replace with your feature image -->
-      <img src="images/exclusive-varieties.jpg" alt="Exclusive Varieties">
-      <h3>Exclusive Varieties</h3>
-      <p>Surprising flavor combinations and infusions for every palate.</p>
-    </div>
+  <!-- FAQ -->
+  <section class="faq container">
+    <h2>Frequently Asked Questions</h2>
+    <details class="faq-item">
+      <summary>What makes your chocolate gourmet?</summary>
+      <p>Our chocolate is crafted from rare cocoa beans, processed in small batches, and refined by master chocolatiers.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Do you offer international shipping?</summary>
+      <p>Yes, we ship worldwide. Shipping rates and times vary by destination.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Can I track my order?</summary>
+      <p>Absolutely. Once your order ships, we provide a tracking number via email.</p>
+    </details>
   </section>
 
-  <!-- Quotes Section -->
-  <section class="quotes">
+  <!-- Newsletter -->
+  <section class="newsletter">
     <div class="container">
-      <div class="quote">
-        <p>“Chocolate is happiness you can eat.”</p>
-        <div class="quote-footer">Jean-Paul Hévin</div>
-      </div>
-      <div class="quote">
-        <p>“Cocoa is the fruit of the gods and chocolate is the elixir of life.”</p>
-        <div class="quote-footer">Jacques Torres</div>
-      </div>
-      <div class="quote">
-        <p>“A life without chocolate is like a day without sunshine.”</p>
-        <div class="quote-footer">Anne-Sophie Pic</div>
-      </div>
+      <h2>Join Our Chocolate Club</h2>
+      <p>Subscribe for exclusive offers, new releases, and behind-the-scenes access.</p>
+      <form action="#" method="POST">
+        <input type="email" name="email" placeholder="Your email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
     </div>
   </section>
 
-  <!-- Affiliate Footer -->
-  <footer class="footer">
+  <!-- Footer -->
+  <footer>
     <p>This is an affiliate page. By clicking the links and making purchases, you support our work at no additional cost.</p>
   </footer>
 
