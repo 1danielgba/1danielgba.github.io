@@ -3,145 +3,187 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Say What Words Can’t</title>
+  <title>Gourmet Chocolate - Discover the Taste of Elegance</title>
+  <!--
+    NOTE: Replace the image paths below (e.g., 'images/hero-chocolate.jpg')
+    with your actual image URLs or local file paths before deploying.
+  -->
   <style>
-    :root {
-      --primary: #3a1c0d;
-      --accent: #a33d2f;
-      --light: #fff8f5;
-      --text: #2d2d2d;
-      --font-sans: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    /* Basic reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: var(--font-sans);
-      background: var(--light);
-      color: var(--text);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f1ee;
+      color: #3b2f2f;
       line-height: 1.6;
     }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    /* Main container */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+
+    /* Hero section */
     .hero {
-      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.5)), url('c0098e65-f55a-49d5-9fa4-a4979b7bbc19.png') center/cover no-repeat; 
-      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
-      padding: 140px 20px;
+      padding: 60px 20px;
+      /* Replace with your hero background image */
+      background: url('images/hero-chocolate.jpg') center/cover no-repeat;
+      color: #f5f1ee;
     }
     .hero h1 {
-      font-size: 4em;
+      font-size: 3rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
       margin-bottom: 20px;
-      color: #fff;
     }
     .hero p {
-      font-size: 1.6em;
+      font-size: 1.25rem;
       max-width: 700px;
-      margin: auto;
     }
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 60px 20px;
+    .btn-primary {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 30px;
+      font-size: 1.1rem;
+      background-color: #5a2e21;
+      color: #f5f1ee;
+      border-radius: 50px;
+      transition: background 0.3s;
     }
-    .section-title {
-      text-align: center;
-      color: var(--primary);
-      font-size: 2.8em;
-      margin-bottom: 50px;
+    .btn-primary:hover {
+      background-color: #7c4535;
     }
-    .feature-grid {
+
+    /* Features section */
+    .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 40px;
-    }
-    .feature {
-      background: #fff;
-      border-radius: 16px;
-      padding: 30px;
-      box-shadow: 0 6px 30px rgba(0,0,0,0.1);
-    }
-    .feature h3 {
-      color: var(--accent);
-      margin-bottom: 12px;
-    }
-    .image-banner {
-      width: 100%;
-      height: auto;
-      border-radius: 16px;
+      gap: 20px;
       margin: 60px 0;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
     }
-    .testimonial {
-      background: #fff;
-      padding: 40px;
-      margin: 50px auto;
-      border-left: 8px solid var(--accent);
+    .feature-card {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
+    }
+    .feature-card img {
+      height: 200px;
+      object-fit: cover;
+    }
+    .feature-card h3 {
+      margin: 15px 0;
+      font-size: 1.5rem;
+      color: #5a2e21;
+    }
+    .feature-card p {
+      padding: 0 15px 20px;
+      color: #3b2f2f;
+    }
+
+    /* Quotes section */
+    .quotes {
+      background-color: #e4d9d1;
+      padding: 60px 20px;
+      border-radius: 12px;
+      margin-bottom: 60px;
+    }
+    .quote {
       font-style: italic;
-      font-size: 1.1em;
+      margin-bottom: 20px;
+      position: relative;
       max-width: 800px;
-      border-radius: 10px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    .cta {
+    .quote::before {
+      content: "“";
+      font-size: 4rem;
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      color: #5a2e21;
+    }
+    .quote-footer {
+      text-align: right;
+      margin-top: 5px;
+      font-weight: bold;
+      color: #5a2e21;
+    }
+
+    /* Footer / Affiliate note */
+    .footer {
       text-align: center;
-      margin: 80px 0 60px;
-    }
-    .cta a {
-      background: var(--accent);
-      color: white;
-      padding: 18px 48px;
-      font-size: 1.4em;
-      text-decoration: none;
-      border-radius: 50px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      transition: background 0.3s ease;
-    }
-    .cta a:hover {
-      background: #822b21;
-    }
-    footer {
-      text-align: center;
-      font-size: 0.85em;
-      color: #777;
-      padding: 40px 20px;
+      padding: 20px 0;
+      font-size: 0.9rem;
+      color: #7a6e6b;
     }
   </style>
 </head>
 <body>
+
+  <!-- Hero Section -->
   <section class="hero">
-    <h1>Say What Words Can’t</h1>
-    <p>Elegant, emotional, and unforgettable — a chocolate gift that restores connections and expresses what hearts feel.</p>
+    <div class="container">
+      <h1>Elevate Your Passion for Gourmet Chocolate</h1>
+      <p>Discover intense flavors and incredible textures crafted by the world's finest chocolatiers.</p>
+      <a href="https://www.kqzyfj.com/la102shqnhp46568DA8E746AC899AA" class="btn-primary">Shop Now</a>
+    </div>
   </section>
 
-  <div class="container">
-    <h2 class="section-title">Why This Gift Changes Everything</h2>
-    <div class="feature-grid">
-      <div class="feature">
-        <h3>Crafted with Intention</h3>
-        <p>Each piece is handcrafted by master chocolatiers, not just for flavor — but to touch the soul.</p>
+  <!-- Features Section -->
+  <section class="container features">
+    <div class="feature-card">
+      <!-- Replace with your feature image -->
+      <img src="images/origin-cocoa.jpg" alt="Cocoa Origin">
+      <h3>Premium Origin</h3>
+      <p>Cocoa selected from the world's most noble regions, sustainably grown.</p>
+    </div>
+    <div class="feature-card">
+      <!-- Replace with your feature image -->
+      <img src="images/artisanal.jpg" alt="Artisanal Craftsmanship">
+      <h3>Artisanal Craftsmanship</h3>
+      <p>Each bar is tempered and molded by hand to ensure unique quality.</p>
+    </div>
+    <div class="feature-card">
+      <!-- Replace with your feature image -->
+      <img src="images/exclusive-varieties.jpg" alt="Exclusive Varieties">
+      <h3>Exclusive Varieties</h3>
+      <p>Surprising flavor combinations and infusions for every palate.</p>
+    </div>
+  </section>
+
+  <!-- Quotes Section -->
+  <section class="quotes">
+    <div class="container">
+      <div class="quote">
+        <p>“Chocolate is happiness you can eat.”</p>
+        <div class="quote-footer">Jean-Paul Hévin</div>
       </div>
-      <div class="feature">
-        <h3>Luxury with Purpose</h3>
-        <p>Designed with aesthetic precision, curated ingredients, and heartfelt detail. It’s more than chocolate. It’s a message.</p>
+      <div class="quote">
+        <p>“Cocoa is the fruit of the gods and chocolate is the elixir of life.”</p>
+        <div class="quote-footer">Jacques Torres</div>
       </div>
-      <div class="feature">
-        <h3>Emotionally Personalized</h3>
-        <p>Include a heartfelt note, photo, or message — engraved into the keepsake box for a truly personal touch.</p>
-      </div>
-      <div class="feature">
-        <h3>Delivered Anywhere</h3>
-        <p>Global express delivery, luxury packaging, and real-time tracking for a flawless gifting experience.</p>
+      <div class="quote">
+        <p>“A life without chocolate is like a day without sunshine.”</p>
+        <div class="quote-footer">Anne-Sophie Pic</div>
       </div>
     </div>
+  </section>
 
-    <img src="542c16cf-4702-4de5-8cc3-06c627988b92.png" alt="Refined chocolate squares" class="image-banner">
-
-    <div class="testimonial">“After years apart, I sent this to my father. He cried when he opened it. That was our first real moment in a decade.” – Ava, Boston</div>
-    <div class="testimonial">“It wasn’t just chocolate. It was an apology, a hug, and a new beginning.” – Elias, Miami</div>
-
-    <div class="cta">
-      <a href="https://www.dpbolvw.net/qc101qgpmgo35457C97D6359B78899" target="_blank">Send a Gift That Speaks</a>
-    </div>
-  </div>
-
-  <footer>
-    <p>This page may contain affiliate links. As an affiliate, we may earn commission from qualifying purchases — with no extra cost to you.</p>
+  <!-- Affiliate Footer -->
+  <footer class="footer">
+    <p>This is an affiliate page. By clicking the links and making purchases, you support our work at no additional cost.</p>
   </footer>
+
 </body>
 </html>
