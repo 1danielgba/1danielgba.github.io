@@ -1,186 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>zChocolat Gourmet - Affiliate Landing Page</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Give the Gift of Unforgettable Delight</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
   <style>
-    /* Reset and Global Styles */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #36221e; color: #f3e5f5; line-height: 1.6; }
-    a { text-decoration: none; color: inherit; }
-    img { max-width: 100%; display: block; }
-
-    /* Container */
-    .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 20px; }
-
-    /* Header */
-    header { background-color: #45241e; padding: 15px 0; position: sticky; top: 0; z-index: 100; }
-    .logo { font-size: 1.5rem; font-weight: bold; color: #fce4ec; text-align: center; }
-    nav ul { display: flex; justify-content: center; gap: 30px; margin-top: 10px; }
-    nav ul li { list-style: none; font-size: 1rem; cursor: pointer; }
-    nav ul li:hover { text-decoration: underline; }
-
-    /* Hero Section */
-    .hero { text-align: center; padding: 100px 20px; background: url('images/hero-zchocolat.jpg') center/cover no-repeat; }
-    .hero h1 { font-size: 3rem; color: #ffeb3b; margin-bottom: 20px; }
-    .hero p { font-size: 1.2rem; color: #fffde7; margin-bottom: 30px; max-width: 700px; margin: 0 auto; }
-    .btn-primary { display: inline-block; background-color: #ad1457; color: #fff; padding: 15px 40px; border-radius: 30px; font-size: 1.1rem; transition: background 0.3s; }
-    .btn-primary:hover { background-color: #880a4e; }
-
-    /* About Section */
-    .about { padding: 80px 0; background-color: #4e342e; }
-    .about h2 { color: #ffe0b2; font-size: 2.2rem; text-align: center; margin-bottom: 20px; }
-    .about p { max-width: 800px; margin: 0 auto; color: #fff8e1; font-size: 1rem; }
-
-    /* Highlights Section */
-    .highlights { padding: 80px 0; }
-    .highlights h2 { text-align: center; color: #ffe0b2; font-size: 2.2rem; margin-bottom: 40px; }
-    .highlights .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-    .highlight-card { background-color: #5e342e; border-radius: 10px; padding: 20px; text-align: center; }
-    .highlight-card img { border-radius: 8px; height: 180px; object-fit: cover; margin-bottom: 15px; }
-    .highlight-card h3 { font-size: 1.5rem; color: #ffebcd; margin-bottom: 10px; }
-    .highlight-card p { font-size: 1rem; color: #fff8e1; }
-
-    /* Gallery Section */
-    .gallery { padding: 80px 0; background-color: #4e342e; }
-    .gallery h2 { text-align: center; color: #ffccbc; font-size: 2rem; margin-bottom: 40px; }
-    .gallery .images { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
-    .gallery .images img { width: 300px; height: 200px; object-fit: cover; border-radius: 10px; }
-
-    /* Testimonials Section */
-    .testimonials { padding: 80px 0; }
-    .testimonials h2 { text-align: center; color: #ffccbc; font-size: 2rem; margin-bottom: 40px; }
-    .testimonial-item { max-width: 700px; margin: 0 auto 30px; background-color: #45302e; border-radius: 10px; padding: 20px; }
-    .testimonial-item p { font-style: italic; color: #fafafa; margin-bottom: 15px; }
-    .testimonial-item span { display: block; text-align: right; font-weight: bold; color: #ffe0b2; }
-
-    /* FAQ Section */
-    .faq { padding: 80px 0; background-color: #4e342e; }
-    .faq h2 { text-align: center; color: #ffe0b2; font-size: 2rem; margin-bottom: 40px; }
-    .faq details { max-width: 800px; margin: 0 auto 20px; background: #5e342e; border-radius: 8px; }
-    .faq summary { padding: 15px; font-weight: bold; cursor: pointer; }
-    .faq p { padding: 15px; background: #6d4c41; margin: 0; border-radius: 0 0 8px 8px; }
-
-    /* CTA Repeat Section */
-    .cta-repeat { text-align: center; padding: 60px 20px; }
-    .cta-repeat .btn-primary { font-size: 1.2rem; padding: 20px 50px; }
-
-    /* Footer */
-    footer { background-color: #45241e; text-align: center; padding: 20px; font-size: 0.9rem; color: #ccc; }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 2.5rem; }
-      .highlights .grid, .gallery .images { grid-template-columns: 1fr; display: block; }
+    /* Root color variables */
+    :root {
+      --bg-primary: #3E2723; /* Chocolate Brown */
+      --bg-light: #F9F4EF;   /* Warm Ivory */
+      --accent: #C5A880;     /* Rich Gold */
+      --text-dark: #2D2D2D;  /* Dark Charcoal */
+      --text-light: #FAF8F3; /* Ivory White */
     }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Montserrat', sans-serif; color: var(--text-dark); background: var(--bg-light); }
+    a { text-decoration: none; }
+    .hero {
+      position: relative; text-align: center; color: var(--text-light);
+      background: url('https://res.cloudinary.com/dxphpupax/image/upload/q_auto/f_auto/dpr_auto/e_contrast:20/e7657b4b-19d1-41c0-a7b9-c4bbee96a8d1_zaj9vd') center/cover no-repeat;
+      min-height: 75vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+    }
+    .hero::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.5); }
+    .hero h1, .hero p { position: relative; z-index: 1; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 1rem; }
+    .hero p { max-width: 600px; font-size: 1.2rem; margin-bottom: 2rem; }
+    .cta-primary {
+      position: relative; z-index: 1; background: var(--accent); color: var(--bg-primary);
+      padding: .8rem 2rem; font-size: 1rem; font-weight: 600; border-radius: 50px; transition: background .3s;
+    }
+    .cta-primary:hover { background: #b89b6f; }
+    .features {
+      display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+      padding: 4rem 2rem; max-width: 1100px; margin: auto;
+    }
+    .feature-card {
+      background: var(--bg-light); border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      padding: 2rem; text-align: center;
+    }
+    .feature-card img {
+      width: auto;
+      height: 80px;
+      object-fit: contain;
+      margin: 0 auto 1rem;
+    }
+    .feature-card h3 { font-family: 'Playfair Display', serif; margin-bottom: .5rem; }
+    .feature-card p { font-size: .95rem; }
+    .testimonials {
+      background: var(--bg-primary); color: var(--text-light); padding: 4rem 2rem; text-align: center;
+    }
+    .testimonials blockquote { font-style: italic; margin: 1rem auto; max-width: 700px; position: relative; line-height: 1.4; }
+    .testimonials blockquote::before { content: "“"; font-size: 3rem; position: absolute; left: -10px; top: -10px; }
+    .products { padding: 4rem 2rem; max-width: 1100px; margin: auto; }
+    .product-grid { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); }
+    .product-card { background: var(--bg-light); border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); overflow: hidden; transition: transform .3s; }
+    .product-card:hover { transform: translateY(-5px); }
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .product-card .info { padding: 1.5rem; text-align: center; }
+    .product-card .info h4 { font-family: 'Playfair Display', serif; margin-bottom: .5rem; }
+    .product-card .info a {
+      display: inline-block; margin-top: 1rem; background: var(--accent); color: var(--bg-primary);
+      padding: .6rem 1.2rem; border-radius: 30px; font-weight: 600; transition: background .3s;
+    }
+    .product-card .info a:hover { background: #b89b6f; }
+    .final-cta { background: var(--accent); color: var(--bg-primary); text-align: center; padding: 3rem 2rem; }
+    .final-cta h2 { font-size: 2.2rem; margin-bottom: 1rem; }
+    .final-cta a { background: var(--bg-primary); color: var(--text-light); padding: .8rem 2rem; border-radius: 50px; font-weight: 600; }
+    footer { text-align: center; padding: 2rem; font-size: .85rem; color: #666; background: var(--bg-light); }
+    footer a { color: var(--text-dark); text-decoration: underline; }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <div class="logo">zChocolat Affiliate</div>
-      <nav>
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Highlights</li>
-          <li>Gallery</li>
-          <li>FAQ</li>
-          <li>Contact</li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
   <!-- Hero -->
   <section class="hero">
-    <h1>Indulge in French Chocolate Luxury</h1>
-    <p>Earn 20% commission on confirmed sales with zChocolat. Experience gourmet elegance delivered to your door.</p>
-    <a href="YOUR_AFFILIATE_LINK" class="btn-primary">Shop Now</a>
+    <h1>Give the Gift of Unforgettable Delight</h1>
+    <p>Elevate your gesture with the unparalleled flavor and elegant presentation of artisan chocolates. Perfect for those you cherish most.</p>
+    <a class="cta-primary" href="https://www.jdoqocy.com/click-101385392-15734455" target="_blank">Discover the Perfect Gift</a>
   </section>
-
-  <!-- About -->
-  <section class="about container">
-    <h2>About zChocolat</h2>
-    <p>zChocolat is renowned for bringing the art of French chocolatiering to your doorstep. Founded in 2003, we partner with master chocolatiers across France to create exclusive collections using the finest ingredients. Our mission is to share the passion and tradition of gourmet chocolate with connoisseurs worldwide.</p>
-  </section>
-
-  <!-- Highlights -->
-  <section class="highlights container">
-    <h2>Why zChocolat?</h2>
-    <div class="grid">
-      <div class="highlight-card">
-        <img src="images/highlight-origin.jpg" alt="Premium Cocoa Origin">
-        <h3>Premium Cocoa Origin</h3>
-        <p>Hand-selected cocoa from the finest French estates for unmatched flavor.</p>
-      </div>
-      <div class="highlight-card">
-        <img src="images/highlight-artisan.jpg" alt="Artisanal Craftsmanship">
-        <h3>Artisanal Craftsmanship</h3>
-        <p>Expert chocolatiers create each piece with precision and passion.</p>
-      </div>
-      <div class="highlight-card">
-        <img src="images/highlight-collection.jpg" alt="Exclusive Collection">
-        <h3>Exclusive Collection</h3>
-        <p>A curated selection of bestsellers and limited-edition flavors.</p>
-      </div>
+  <!-- Why Choose -->
+  <section class="features">
+    <div class="feature-card">
+      <img src="https://res.cloudinary.com/dxphpupax/image/upload/q_auto,f_auto/imagem_2025-05-18_182704503_v9wo1h" alt="Romantic icon" loading="lazy"/>
+      <h3>Romantic</h3>
+      <p>Create unforgettable moments with elegantly curated chocolates that speak to the heart.</p>
+    </div>
+    <div class="feature-card">
+      <img src="https://res.cloudinary.com/dxphpupax/image/upload/q_auto,f_auto/imagem_2025-05-18_184658834_q5aqb2" alt="Vegan icon"/>
+      <h3>Thoughtful Vegan & Craft Options</h3>
+      <p>Indulge every preference—vegan, gluten-free, and ethically sourced.</p>
+    </div>
+    <div class="feature-card">
+      <img src="https://res.cloudinary.com/dxphpupax/image/upload/q_auto,f_auto/imagem_2025-05-18_185915540_chforc" alt="Packaging icon"/>
+      <h3>Luxurious Packaging</h3>
+      <p>Unbox a moment of wonder with premium boxes designed to impress.</p>
+    </div>
+    <div class="feature-card">
+      <img src="https://res.cloudinary.com/dxphpupax/image/upload/q_auto,f_auto/imagem_2025-05-18_185542521_yadbst" alt="Macarons icon"/>
+      <h3>Macarons</h3>
+      <p>Immerse in delicate flavors—light, airy, and perfectly sweetened for every celebration.</p>
     </div>
   </section>
-
-  <!-- Gallery -->
-  <section class="gallery container">
-    <h2>Gallery</h2>
-    <div class="images">
-      <img src="images/gallery1.jpg" alt="Chocolate Assortment">
-      <img src="images/gallery2.jpg" alt="Gift Box">
-      <img src="images/gallery3.jpg" alt="Bar Close-up">
-    </div>
-  </section>
-
   <!-- Testimonials -->
-  <section class="testimonials container">
-    <h2>What the Experts Say</h2>
-    <div class="testimonial-item">
-      <p>“zChocolat delivers an exquisite chocolate experience unlike any other.”</p>
-      <span>— Jean-Paul Hévin</span>
-    </div>
-    <div class="testimonial-item">
-      <p>“Luxurious texture and deep flavors—pure indulgence.”</p>
-      <span>— Jacques Torres</span>
-    </div>
-    <div class="testimonial-item">
-      <p>“A masterpiece in every bite.”</p>
-      <span>— Anne-Sophie Pic</span>
+  <section class="testimonials">
+    <blockquote>“Chocolate is the first luxury. It has so many things wrapped up in it: deliciousness in the moment, nostalgia, and happiness.” – <strong>Elsa Petersen, Master Chocolatier</strong></blockquote>
+    <blockquote>“Good chocolate is like a surprise party in your mouth.” – <strong>Jean-Paul Houdet, Award-Winning Pastry Chef</strong></blockquote>
+  </section>
+  <!-- Products Showcase -->
+  <section class="products">
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://res.cloudinary.com/dxphpupax/image/upload/q_auto,f_auto/imagem_2025-05-18_190223094_wpqvsy" alt="Curated Gift Box"/>
+        <div class="info">
+          <h4>Curated Gift Box</h4>
+          <p>A selection of signature chocolates, expertly packaged for gifting.</p>
+          <a href="[https://www.tkqlhce.com/ba107shqnhp46568DA8E7467CACD6A]" target="_blank">View Details</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://res.cloudinary.com/dxphpupax/image/upload/q_auto,f_auto/imagem_2025-05-18_190457076_dvnmg3" alt="Business Gift"/>
+        <div class="info">
+          <h4>Business Gift</h4>
+          <p>Impress clients and colleagues with premium chocolate assortments crafted for professional elegance.</p>
+          <a href="https://www.jdoqocy.com/click-101385392-10051136" target="_blank">Send a Delicious Gift</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://res.cloudinary.com/dxphpupax/image/upload/q_auto,f_auto/imagem_2025-05-18_190836709_wonf81" alt="Artisan Vegan Delights"/>
+        <div class="info">
+          <h4>Artisan Vegan Delights</h4>
+          <p>Decadent plant-based creations, cruelty-free and irresistible.</p>
+          <a href="https://www.anrdoezrs.net/5f108ft1zt0GIHIKPMKQJGIKHPNPQJ" target="_blank">Explore Vegan Options</a>
+        </div>
+      </div>
     </div>
   </section>
-
-  <!-- FAQ -->
-  <section class="faq container">
-    <h2>FAQ</h2>
-    <details>
-      <summary>How do I redeem my discount?</summary>
-      <p>Simply click 'Shop Now' and your affiliate code will be applied at checkout.</p>
-    </details>
-    <details>
-      <summary>What is the shipping cost?</summary>
-      <p>Shipping rates depend on your location. Standard shipping starts at $5.95.</p>
-    </details>
-    <details>
-      <summary>Do you offer gift wrapping?</summary>
-      <p>Yes, gift wrapping is available at checkout for an additional fee.</p>
-    </details>
+  <!-- Final CTA -->
+  <section class="final-cta">
+    <h2>Show Them How Much You Care with a Gift That Speaks Volumes</h2>
+    <a href="https://www.jdoqocy.com/click-101385392-15734455" target="_blank">Find the Perfect Chocolate Gift to Brighten Their Day</a>
   </section>
-
-  <!-- Repeat CTA -->
-  <section class="cta-repeat">
-    <a href="https://www.kqzyfj.com/pq80xdmjdl02124964A3026845566" class="btn-primary">Claim Your 20% Commission Now</a>
-  </section>
-
   <!-- Footer -->
   <footer>
-    <p>This is an affiliate page. Clicking links and making purchases supports our work at no extra cost.</p>
+    <p><a href="https://www.cj.com/legal/psa-us" target="_blank">Affiliate Disclosure & Terms</a></p>
   </footer>
 </body>
 </html>
